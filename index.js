@@ -3,7 +3,7 @@ const multer = require('multer')
 const app = express()
 const requestIp = require('request-ip');
 const path = require("path")
-const port = 3000
+// const port = 3000
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -46,4 +46,4 @@ app.get('/', (req, res) => {
     res.status(200).send('Hello world');
 });
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
+app.listen(process.env.PORT, () => console.log(`Hello world app listening on port ${port}!`));
